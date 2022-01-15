@@ -22,5 +22,4 @@ public class CountSubSequenceInString {
 		}
 		return sumSeq%100000007;//To Prevent Overflow modulo is used
 	}
-
 }
