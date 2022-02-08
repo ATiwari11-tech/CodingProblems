@@ -1,7 +1,7 @@
 //Write a function that takes an integer and returns the number of 1 bits it has.
 package com.bitmanipulaton;
 
-public class Reverse32bit {
+public class NumberOfSetBits {
 
 	public static void main(String[] args) {
 		long a=25;
