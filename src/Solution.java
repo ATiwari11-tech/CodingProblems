@@ -4,7 +4,7 @@ public class Solution {
 		System.out.println(" inside m1 method");
 	}
 
-	public void m2(float f, int i) {
+	public void m(float f, int i) {
 		System.out.println(" inside m2 method");
 	}
 
