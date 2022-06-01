@@ -1,13 +1,13 @@
 package com.arraysorting;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class QuickSort {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> A = new ArrayList<Integer>();
 		A.add(20);A.add(23);A.add(27);A.add(18);A.add(14);A.add(10);A.add(11);A.add(8);A.add(7);A.add(15);
+		//20,23,27,18,14,10,11,8,7,15
 		int n = A.size();
 		int s=0;
 		int e=n-1;
