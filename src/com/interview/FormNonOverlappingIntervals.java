@@ -8,43 +8,64 @@ package com.interview;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class FormNonOverlappingIntervals {
 
 	public static void main(String[] args) {
 		ArrayList<Integer[]> inputList = new ArrayList<Integer[]>();
 		ArrayList<Integer[]> result = new ArrayList<Integer[]>();
-//		inputList.add(new Integer[] { 1, 3 });
-//		inputList.add(new Integer[] { 2, 6 });
-//		inputList.add(new Integer[] { 8, 10 });
-//		inputList.add(new Integer[] { 15, 18 });
-	 //inputList.add(new Integer[] { 1, 4 });
-	 //inputList.add(new Integer[] { 4, 5 });
-	inputList.add(new Integer[] { 1, 4 });
-		inputList.add(new Integer[] { 0, 2 });
-		inputList.add(new Integer[] { 3, 5 });
-		//inputList.add(new Integer[] { 3, 5 });
-		System.out.println("Original Intervals:");
+//		 inputList.add(new Integer[] { 1, 3 });
+//		 inputList.add(new Integer[] { 2, 6 });
+//		 inputList.add(new Integer[] { 8, 10 });
+//		 inputList.add(new Integer[] { 15, 18 });  
+	
+//		 inputList.add(new Integer[] { 1, 4 });
+//		 inputList.add(new Integer[] { 4, 5 });
+		
+//		inputList.add(new Integer[] { 1, 4 });
+//		inputList.add(new Integer[] { 0, 2 });
+//		inputList.add(new Integer[] { 3, 5 });
+		
+
+//		inputList.add(new Integer[] {1,4});
+//		inputList.add(new Integer[] {5,6});
+//		inputList.add(new Integer[] {4,5});
+		
+		inputList.add(new Integer[] {0,0});
+
+		inputList.add(new Integer[] {1,4});
+		System.out.println("Original Intervals In Sorted Order:");
+		//Sort the input list in ascending order
+		Collections.sort(inputList,new MyComparator());
 		showList(inputList);
 		System.out.println();
-		for (int i = 0; i < inputList.size()-1 && inputList.size() > 1; i++) {
-			int i1 = inputList.get(i)[0];
-			int j1 = inputList.get(i)[1];
-			int x = inputList.get(i + 1)[0];
-			int y = inputList.get(i + 1)[1];
-			if (!(y < i1 || x > j1)) {// Overlapping condition
-				x = Math.min(i1, x);
-				y = Math.max(j1, y);
-				inputList.set(i, new Integer[] { x, y });
-				inputList.remove(i+1);
-				i=-1;
-			} 
-//			else {
-//				inputList.set(i+1,new Integer[] { inputList.get(i+1)[0], inputList.get(i+1)[1] });
-//			}
+		int i1 = inputList.get(0)[0];
+		int j1 = inputList.get(0)[1];
+		for(int i=1;i<inputList.size();i++)
+		{
+			int x = inputList.get(i)[0];
+			int y = inputList.get(i)[1];
+			if(!(y < i1 || x > j1))//Overlapping condition
+			{
+				x = Math.min(x, i1);
+				y = Math.max(y, j1);
+			}
+			else if(result.isEmpty())
+				result.add(new Integer[] {i1,j1});
+			else
+				result.add(new Integer[] {x,y});
+			if(result.isEmpty())
+				result.add(new Integer[] {x,y});
+			else if(result.get(result.size()-1)[0] < x)
+				result.add(new Integer[] {x,y});
+			else
+				result.set(result.size()-1,new Integer[] {x,y});
+			i1 = x;j1=y;
 		}
 		System.out.println("Merged Intervals:");
-		showList(inputList);
+		showList(result);
 		System.out.println();
 	}
 
@@ -53,5 +74,21 @@ public class FormNonOverlappingIntervals {
 			System.out.print(Arrays.toString(list.get(i)) + " ");
 		}
 	}
-
+	
+	public static class MyComparator implements Comparator<Integer[]>
+	{
+		@Override
+		public int compare(Integer[] o1, Integer[] o2) {
+			int i1 = o1[0];
+			int j1 = o1[1];
+			int i2 = o2[0];
+			int j2 = o2[1];
+			if(i1 != i2)
+				return i1-i2;
+			else if(j1 != j2)
+				return j1-j2;
+			else
+				return 0;
+		}
+	}
 }
