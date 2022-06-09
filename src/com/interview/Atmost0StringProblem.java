@@ -31,7 +31,7 @@ public class Atmost0StringProblem {//Replace atmost 1 0
 				ans = Math.max(ans, l+r+1);
 			}
 		}
-		System.out.println("Max value is:"+ans);
+		System.out.println("Max value is:"+ans);//Maximum consecutive 1's
 	}
 
 }
