@@ -2,7 +2,7 @@ package com.contest;
 
 import java.util.ArrayList;
 
-import com.sun.java_cup.internal.runtime.Symbol;
+
 
 public class LargestOR {
 

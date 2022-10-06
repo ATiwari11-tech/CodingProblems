@@ -7,11 +7,11 @@ public class LowerBoundUsingBinarySearch {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> A = new ArrayList<Integer>();
-		A.add(10);A.add(11);A.add(12);A.add(12);A.add(12);A.add(13);
+		A.add(10);A.add(11);A.add(12);A.add(12);A.add(12);A.add(24);
 		//Find lower bound of k=12 i.e. first occurrence of number >= 12
 		int n = A.size();
 		int l=0,h=n-1;
-		int k=12;
+		int k=25;
 		int ans=0;
 		while(l<=h)
 		{
@@ -19,7 +19,8 @@ public class LowerBoundUsingBinarySearch {
 			if(A.get(mid) == k)
 			{
 				ans=mid;
-				h=mid-1;
+				break;
+				//h=mid-1;
 			}
 			else if(A.get(mid) < k)
 			{
