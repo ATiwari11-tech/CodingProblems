@@ -4,6 +4,7 @@ package com.linkedlist;
 
 public class MiddleElementInLL {
     public static void main(String args[]){
+        boolean isLoopPresent = false;
         Node head = createLL(8);//1,2,3,4,5,6,7,8
         displayLL(head);
         System.out.println();
@@ -13,11 +14,16 @@ public class MiddleElementInLL {
         while(fp.next != null && fp.next.next != null){
             sp = sp.next;
             fp=fp.next.next;
+            if(sp.data == fp.data){
+                isLoopPresent = true;
+                break;
+            }
         }
         if(fp.next == null)//Odd Size LinkedList
             System.out.println("Middle Most Element = "+sp.data);
         else if(fp.next.next == null)//Even Sized LinkedList
             System.out.println("Middle Most Element = "+sp.next.data);
+        System.out.println("There exists loop in linkedlist : "+isLoopPresent);
     }
     public static Node createLL(int n){
         Node head = new Node(1);
