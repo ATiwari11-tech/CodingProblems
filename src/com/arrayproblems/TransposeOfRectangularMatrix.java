@@ -30,7 +30,7 @@ public class TransposeOfRectangularMatrix {
 				b[i][j] = a[j][i];
 			}
 		}
-		System.out.println("Tranpose:");
+		System.out.println("Transpose:");
 		for(int i=0;i<m;i++)
 		{
 			for(int j=0;j<n;j++)
