@@ -1,4 +1,5 @@
 //Given a complete binary tree, check if it is a min heap
+//TC->O(logn)
 package com.heaps;
 
 import java.util.ArrayList;

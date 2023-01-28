@@ -2,7 +2,7 @@ package com.binarysearch;
 
 public class SquareRootOfNumber {
     public static void main(String []args){
-        int n=1024;
+        int n=56;
         int l=1,h=n;
         int ans=0;
         int mid=0;

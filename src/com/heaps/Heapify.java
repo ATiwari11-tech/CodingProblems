@@ -1,6 +1,7 @@
 //Given a complete binary tree in which left subtree and right subtree exhibits properties of max heap
 //We need to now heapify root element i.e. insert root element at it's correct position such that entire tree
 //exhibits properties of max heap
+//TC -> O(logn)
 package com.heaps;
 
 import java.util.ArrayList;

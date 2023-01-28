@@ -62,7 +62,7 @@ public class LLDClient
         //u1.psp=5.0;//Not Allowed because it's of type Student
         u1.displayId="Abhi_T";
         u1.login();
-        u1.pauseCourse();
+//        u1.pauseCourse();
         Instructor i = new Instructor();
         i.userName="Pratik";
         i.password="tef123";

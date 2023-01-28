@@ -11,6 +11,7 @@ import java.util.List;
 
 public class OptimizedHeapSort {
     public static void main(String args[]) {
+        System.out.println(-1/2);
         List<Integer> A = new ArrayList<>();
         List<Integer> B = new ArrayList<>();
         A.add(4);
