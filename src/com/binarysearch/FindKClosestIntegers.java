@@ -8,7 +8,7 @@ import java.util.List;
 public class FindKClosestIntegers {
     public static void main(String args[]){
         int arr[]={10,20,30,40,50,59};
-        int x=25;
+        int x=66;
         int k = 3;
         List<Integer> resultList = new ArrayList<>();
         int n = arr.length;

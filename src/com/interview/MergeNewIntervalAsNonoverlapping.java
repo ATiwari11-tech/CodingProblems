@@ -1,4 +1,5 @@
-//Given an Input Intervals,we have to insert a new interval such that all intervals are merged in non overlapping fashion
+//Given an Input Sorted Intervals,we have to insert a new interval such that all intervals are merged in
+// non overlapping fashion
 package com.interview;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class MergeNewIntervalAsNonoverlapping {
 		inputList.add(new Integer[] { 4, 6 });
 		inputList.add(new Integer[] { 8, 10 });
 		inputList.add(new Integer[] { 15, 18 });
+		inputList.add(new Integer[] { 16, 91 });
 		Integer[] newInterval = new Integer[] { 5, 9 };
 		System.out.println("Original Intervals:");
 		showArrayElements(inputList);//Display Original Array List

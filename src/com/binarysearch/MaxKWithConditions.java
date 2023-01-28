@@ -20,12 +20,15 @@ public class MaxKWithConditions {
     }
     public static boolean checkSubArraySum(int arr[],int k,int b){
         int sum=0;
+        int max = 0;
         for(int i=0;i<k;i++){
             sum += arr[i];
         }
-        for(int i=k;i<arr.length;i++){
-            sum += (arr[i] - arr[i-k]);
+        max = sum;
+        for(int i=k;i<arr.length;i++) {
+            sum += (arr[i] - arr[i - k]);
+            max = Math.max(max, sum);
         }
-        return sum <= b ? true:false;
+        return max <= b ? true:false;
     }
 }
