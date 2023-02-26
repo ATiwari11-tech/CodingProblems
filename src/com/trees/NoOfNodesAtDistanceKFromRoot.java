@@ -21,8 +21,11 @@ public class NoOfNodesAtDistanceKFromRoot {
     public static int countNodesAtDisK(TreeNode node,int level,int k){
         if(node == null)
             return 0;
-        if(level == k)
+        if(level == k) {
+            System.out.print(node.data+",");
             return 1;
+        }
+        System.out.println();
         return countNodesAtDisK(node.left,level+1,k) + countNodesAtDisK(node.right,level+1,k);
     }
 }

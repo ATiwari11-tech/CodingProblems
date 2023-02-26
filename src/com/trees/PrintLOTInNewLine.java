@@ -1,5 +1,7 @@
 //Given a binary tree, print level order traversal i.e. print level by level
 //Idea is to use queue i.e. enqueue and dequeue
+//TC -> O(N) -> Every element in the tree is scanned only once
+//SC -> O(N) -> At any level maximum number of nodes may get into queue would be N/2 elements
 package com.trees;
 import java.util.ArrayList;
 import java.util.LinkedList;

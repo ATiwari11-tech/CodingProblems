@@ -1,4 +1,10 @@
 //Given a Binary Tree check if it is a Binary Search Tree
+//Idea is to create range limit at every node, from where to where the range is valid
+//for example for root node valid range should be -infinity < root val < +infinity
+//for root left node valid range should be -infinity < root left val < root.val-1
+//for root right node valid range should be  root val+1 < root right val < +infinity
+//TC -> O(N)
+//Sc -> O(H), height because of recursion
 
 package com.trees;
 

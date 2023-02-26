@@ -1,4 +1,4 @@
-//Given a binary tree with unique values, you need to find the path from root node to that node
+//Given a binary tree with unique values, you need to find the path from that node to root node
 //Return an array with path values
 package com.trees;
 
