@@ -43,5 +43,6 @@ public class Client {
                 .setPsp(78.89)
                 .setWeight(68.90)
                 .build();//Now Builder class is completely responsible for creating objects(build Students) and validation also
+        System.out.println("Validation State:"+student.validate());
     }
 }
