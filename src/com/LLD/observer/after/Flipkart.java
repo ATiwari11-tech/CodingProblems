@@ -12,7 +12,7 @@ public class Flipkart {//Producer/Creator
     public void removeSubscriber(OrderPlacedSubscriber orderPlacedSubscriber){
         orderPlacedSubscribers.remove(orderPlacedSubscriber);
     }
-    public void orderPlaces(Order order){
+    public void orderPlaced(Order order){
        for(OrderPlacedSubscriber orderPlacedSubscriber:orderPlacedSubscribers){
            orderPlacedSubscriber.onOrderPlaced(order);
        }
