@@ -1,0 +1,27 @@
+what are models?
+        how to structure codebase?
+         -> Segregate responsibilities into multiple classes i.e. follow SRP
+    Example :- Client -> Waiter(Controller) -> Cook(Server/Service) -> Fridge/Kitchen -> Ingredients
+                         <-       <-      <-                <-
+               ->We can remove Client from our system 'Restaurant' since client is not part of our system
+               'Client' should talk to 'Controller'(interface of my system that is exposed to Client)
+               ->Controller is basically the API. Here Waiter is the API in our restaurant system and controller
+               should be light weight i.e. no biz logic. only take input from client and pass to server/service
+               ->All biz logic will be written here in this service
+               ->Service/Server will talk to Repository/Database like Fridge which allows access to ingredients(data)
+               Repository -> save(),query1(),query2(),update()
+              -> Controller(Waiter) -> Service(Cook( -> Repository(Fridge)
+                                        <-(Model- Entities that you are storing in DB i.e. ingredients)<-
+              M -> Model(Backend)
+              V -> View(Frontend)
+              C -> Controller(Backend)
+
+              Project Structure
+              src/
+                    models/(User,Show,Movie classes will come here)
+                    controllers/(UserController,ShowController will come here)
+                    services/(UserService,ShowService
+                    repositories/dao(data access objects)
+
+              -> Server side design would be as follows
+              Controller -> Service -> Repo will talk to Model

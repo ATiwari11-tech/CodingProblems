@@ -1,0 +1,49 @@
+1:1 relationship - id of one side on other side
+
+example  - if there are two tables husbands and wives so in either husband table we'll have wife id or
+in wives table we will have husband_id
+
+1:m relationship or m :1 relationship -> id of one side to be mentioned in the m side table
+
+Instructor & Batches -> 1 instructor can teach multiple batches
+                        1 Batch at a time can be taught by only 1 Instructor
+
+So cardinality is 1:M -> On the M Side we'll have curr_instructor_id i.e on the Batches Side table
+
+m:m relationship - mapping tables represents m:m relationship
+
+Steps to approach Schema Design ->
+1. For each class which represent an entity in class diagram create a table
+        class Movie {// name of the table in schema design would be movies
+        id - column of table
+        title - column of table
+        name - column table
+        List<Actor> - non primitive attrs.
+2. For each primitive attributes in the class, put that as a column in the corresponding table i.e. non objects
+3. For every non primitive attrs i.e.  has relation with other class
+        a. Find the cardinality of the relation
+        b. Represent that relation as per rules to represent that cardinality i.e. what is the cardinality
+        between relation Movie and Actor so 1 Movie can have multiple actors and 1 Actor can be a part of how many movies
+        so relationship is M:M so create mapping table movie_actors so total e tables needed i.e. actors, movies and
+        actor_movies table
+
+      How to Code
+      1. Project Structure(should be structured as per best practices in the industry
+      2. Atleast some of the requirements must be running end to end. it is ok not able to work on all requirement
+      3. How?
+        a. Code all the models(classes in the class diagram)
+        b. Go requirement by requirement
+            -> implement each class/interface needed to satisfy that requirement
+
+       a. class Movie{   class Show{  class Actor { // Code all the models
+
+
+       }                }        }
+
+       b. user should be able to login( a requirement)
+            class UserController{   class UserService{          class UserRepo{
+            login() ->              login(){                        save(){
+                                                                    }
+                                    }                           }
+            }                       }
+            user should be able to book a ticket
