@@ -1,0 +1,33 @@
+1. Overview of the system
+ a. is it real world system b. Do we need to persist data? c.Command line
+2. Requirement Gathering
+    - Suggest features/ideas or corner cases(classification)
+        a. Size of board can be any n*n
+        b. Let's says no. of players  = n-1
+        c. Every player can choose their symbol at start of the game. We shouldn't allow 2 players with same symbol
+3. Will there be bots i.e. computer player? - Yes
+4. Bots can have diff. difficulty i.e. simple/medium/complex
+5. Only 1 Bot per game?
+so we need validation here and which design pattern provide validation(Builder)
+5. who will make the fist move? ans is at the start of the game we randomize the list of players and they play in the
+order in list
+[1,2,3,4]  or [3,2,1,4]
+6. How will the winner be decided -> We want to keep our game extensible. User at start of game can list what and all
+rules to apply to decide a winner
+ ans -> all column of 1 row having same symbol
+        all corners have same symbol
+        all cells of 1 col having same symbol
+
+  we'll use strategy design pattern as we have different ways to win this game
+7. Game ends as soon as one winner or a draw
+8. No one can exit in between
+9. Undo a move - global undo button, anyone can press any # of times, undo whatever the last move was
+10. Show replay of the game once the game ended, doesn't include undone moves
+Features to be suggested -> Leader board
+                         -> Tournaments
+                         -> Pause/Resume/Timer
+                         -> Can a player exit a game in between
+                         -> Cells are blocked(like in chess)
+
+
+Surprise question -> how to implement undo feature
